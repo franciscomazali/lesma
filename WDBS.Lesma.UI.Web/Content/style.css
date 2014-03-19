@@ -11,7 +11,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background: url(../images/image-bg.jpg) top no-repeat fixed #fbfbfb;
+    background: url(images/image-bg.jpg) top no-repeat fixed #fbfbfb;
 }
 
 body {
@@ -40,8 +40,7 @@ p {
     white-space:pre-wrap;
 }
 
-input {
-    border: none;
+input, textarea {
     border:1px solid #cccccc;
 }
 
@@ -52,14 +51,14 @@ a:link, visited, hover, active {
 #wrapper {
     float: left;
     width: auto;
-    margin: 180px 0 0 0;
+    margin: 200px 0 0 0;
     /*background: #ff006e;*/
 }
 
 header {
     width: 960px;
     height: auto;
-    margin: 0 0 0 -480px;
+    margin: 20px 0 0 -480px;
     left: 50%;
     /*position: relative;*/
     float: left;
@@ -76,7 +75,7 @@ header {
 
     header nav {
         float: left;
-        background: #09F;
+        /*background: #09F;*/
         list-style: none;
         padding: 0;
     }
@@ -107,7 +106,7 @@ header {
 
     #nav-main li {
         margin: 0 0 0 30px;
-        background: #4cff00;
+        /*background: #4cff00;*/
         display: inline;
         font-size: 3.0em;
     }
@@ -158,7 +157,7 @@ header {
 .content {
     height: auto;
     float: left;
-    font-size:1.6em;
+    font-size:1.8em;
     /*margin: 20px 0;*/
 
     /*width:960px;
@@ -208,7 +207,13 @@ header {
     padding: 0 20px 0 0;
     float:left;
     border-right:1px solid #cccccc;
-    background:#4cff00;
+    /*background:#4cff00;*/
+}
+
+#box-livro-lesma-mesma h2{
+    float:left;
+    margin: 0 0 10px 0;
+    /*background:#ff006e;*/
 }
 
 #box-livro-lesma-mesma figure{
@@ -241,7 +246,7 @@ header {
     width:600px;
     float:left;
     margin: 0 0 0 20px;
-    background:#4cff00;
+    /*background:#4cff00;*/
 }
 
 #bloco-txt-lesma-mesma h2{
@@ -253,51 +258,76 @@ header {
 #bloco-txt-sobre-lesma {
     width:960px;
     float:left;
-    background:#4cff00;
+    /*background:#4cff00;*/
 }
 
 #bloco-txt-sobre-lesma h2{
     float:left;
     margin: 0 0 10px 0;
-    background:#ff006e;
+    /*background:#ff006e;*/
 }
 
 #bloco-txt-selma {
-    width:600px;
+    width:750px;
     float:left;
     margin:0 0 0 20px;
-    background:#4cff00;
+    /*background:#4cff00;*/
 }
 
 #bloco-txt-selma h2{
     float:left;
-    margin: 10px 0;
-    background:#ff006e;
+    margin: 20px 0;
+    /*background:#ff006e;*/
+}
+
+#bloco-txt-selma h2:first-child{
+    margin: 0 0 20px 0;
 }
 
 #bloco-txt-nina {
-    width:600px;
+    width:750px;
     float:left;
     margin:0 0 0 20px;
-    background:#4cff00;
+    /*background:#4cff00;*/
 }
 
+#bloco-txt-nina a{
+    color: #a14627;
+    text-decoration:none;
+}
+
+#bloco-txt-nina a:visited{
+    color: #a14627;
+    text-decoration:none;
+}
+
+#bloco-txt-nina a:hover{
+    color: #a14627;
+    text-decoration:underline;
+}
+
+
 #bloco-txt-nina h2{
+    width:100%;
     float:left;
-    margin: 0 0 10px 0;
-    background:#ff006e;
+    margin: 20px 0;
+    /*background:#ff006e;*/
+}
+
+#bloco-txt-nina h2:first-child{
+    margin: 0 0 20px 0;
 }
 
 #bloco-txt-contato {
     width:300px;
     float:left;
-    background:#4cff00;
+    /*background:#4cff00;*/
 }
 
 #bloco-txt-contato h2{
     float:left;
     margin: 0 0 10px 0;
-    background:#ff006e;
+    /*background:#ff006e;*/
 }
 
 #box-form {
@@ -305,7 +335,7 @@ header {
     height: auto;
     float: left;
     margin: 0 0 0 50px;
-    background: #09F;
+    /*background: #09F;*/
 }
 
 #box-form input[type=text] {
@@ -313,7 +343,7 @@ header {
     float: left;
     margin:10px 0;
     padding:10px 0;
-    background: #ffcc00;
+    background: #ffffff;
 }
 
 #box-form input[type=email] {
@@ -321,7 +351,7 @@ header {
     float: left;
     margin:10px 0;
     padding:10px 0;
-    background: #ffcc00;
+    background: #ffffff;
 }
 
 #box-form input:first-child {
@@ -338,8 +368,7 @@ textarea {
     float: left;
     margin:10px 0;
     padding:10px 0;
-    border:none;
-    background: #ffcc00;
+    background: #ffffff;
 }
 
 input[type=submit] {
@@ -355,7 +384,7 @@ input[type=submit] {
 @media screen and (width: 1600px) {
     .content {
         width: 1203px;
-		background:#090;
+		/*background:#090;*/
         padding-left: 320px;
     }
 }
@@ -364,6 +393,14 @@ input[type=submit] {
     .content {
         width: 1166px;
         padding-left: 204px;
+    }
+}
+
+@media screen and (width: 1280px) {
+    .content {
+        width: 1203px;
+		/*background:#090;*/
+        padding-left: 160px;
     }
 }
 

@@ -108,6 +108,8 @@
     <Content Include="Content\Images\image-bg.jpg" />
     <Content Include="Content\Images\image-bio-nina.jpg" />
     <Content Include="Content\Images\image-bio-selma.jpg" />
+    <Content Include="Content\Images\image-bt-en.png" />
+    <Content Include="Content\Images\image-bt-pt.png" />
     <Content Include="Content\Images\image-btn-facebook.png" />
     <Content Include="Content\Images\image-livro.jpg" />
     <Content Include="Content\Images\image-logo.png" />
