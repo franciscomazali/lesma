@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>Lesma Edições</title>
@@ -15,6 +15,14 @@
                     scrollLeft: $(target).offset().left, scrollTop: $(target).offset().top
                 }, 2000);
             });
+
+            $("header figure a").bind("click", function (event) {
+                event.preventDefault();
+                var target = $(this).attr("href"); $("html, body").stop().animate({
+                    scrollLeft: $(target).offset().left, scrollTop: $(target).offset().top
+                }, 2000);
+            });
+
         });
     </script>
 
@@ -23,16 +31,19 @@
 
     <header>
         <figure>
-            <img src="@Url.Content("~/Content/images/image-logo.png")" title="Lesma Edições" />
+            <a href="#lesma-mesma">
+            <img src="@Url.Content("~/Content/images/image-logo.png")" title="Lesma Edições" /></a>
         </figure>
         <nav id="nav-social">
             <ul>
                 <li>
                     <img src="@Url.Content("~/Content/images/image-btn-facebook.png")" title="Facebook" /></li>
                 <li>
-                    <img src="@Url.Content("~/Content/images/image-bt-pt.png")" title="Português" /></li>
+                    <a href="#">
+                    <img src="@Url.Content("~/Content/images/image-bt-pt.png")" title="Português" /></a></li>
                 <li>
-                    <img src="@Url.Content("~/Content/images/image-bt-en.png")"  title="Inglês" /></li>
+                    <a href="#">
+                    <img src="@Url.Content("~/Content/images/image-bt-en.png")"  title="Inglês" /></a></li>
             </ul>
         </nav>
         <nav id="nav-main">
@@ -109,8 +120,8 @@
                     <p>Entre em contato conosco, para esclarecer dúvidas, nos dar sugestões ou críticas, solicitar nossos produtos.</p>
                 </div>
                 <div id="box-form">
-                    <input type="text" name="nome" />
-                    <input type="email" name="email" />
+                    <input type="text" name="nome" placeholder="Nome"/>
+                    <input type="email" name="email" placeholder="E-mail"/>
                     <textarea></textarea>
                     <input type="submit" value="Enviar" />
                 </div>

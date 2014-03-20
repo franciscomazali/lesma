@@ -111,6 +111,7 @@
     <Content Include="Content\Images\image-bt-en.png" />
     <Content Include="Content\Images\image-bt-pt.png" />
     <Content Include="Content\Images\image-btn-facebook.png" />
+    <Content Include="Content\Images\image-livro-elephants.jpg" />
     <Content Include="Content\Images\image-livro.jpg" />
     <Content Include="Content\Images\image-logo.png" />
     <Content Include="Content\style.css" />

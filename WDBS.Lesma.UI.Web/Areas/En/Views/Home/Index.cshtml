@@ -15,6 +15,14 @@
                     scrollLeft: $(target).offset().left, scrollTop: $(target).offset().top
                 }, 2000);
             });
+
+            $("header figure a").bind("click", function (event) {
+                event.preventDefault();
+                var target = $(this).attr("href"); $("html, body").stop().animate({
+                    scrollLeft: $(target).offset().left, scrollTop: $(target).offset().top
+                }, 2000);
+            });
+
         });
     </script>
 
@@ -23,16 +31,19 @@
 
     <header>
         <figure>
-            <img src="@Url.Content("~/Content/images/image-logo.png")" title="Lesma Edições" />
+            <a href="#lesma-mesma">
+            <img src="@Url.Content("~/Content/images/image-logo.png")" title="Lesma Edições" /></a>
         </figure>
         <nav id="nav-social">
             <ul>
                 <li>
                     <img src="@Url.Content("~/Content/images/image-btn-facebook.png")" title="Facebook" /></li>
                 <li>
-                    <img src="@Url.Content("~/Content/images/image-btn-facebook.png")" title="Português" /></li>
+                    <a href="#">
+                    <img src="@Url.Content("~/Content/images/image-bt-pt.png")" title="Português" /></a></li>
                 <li>
-                    <img src="@Url.Content("~/Content/images/image-btn-facebook.png")"  title="Inglês" /></li>
+                    <a href="#">
+                    <img src="@Url.Content("~/Content/images/image-bt-en.png")"  title="Inglês" /></a></li>
             </ul>
         </nav>
         <nav id="nav-main">
@@ -52,6 +63,7 @@
 
             <section id="lesma-mesma" class="content">
                 <div id="box-livro-lesma-mesma">
+                    <h2>1ª Publicação</h2>
                     <figure>
                         <img src="@Url.Content("~/Content/images/image-livro.jpg")" title="Lesma Mesma" />
                     </figure>
@@ -59,13 +71,15 @@
                     <button>Encomendar</button>
                 </div>
                 <div id="bloco-txt-lesma-mesma">
+                    <h2>Lesma Mesma</h2>
                     <p>Lesma Mesma vivia sua vidinha de lesma. Andava como uma lesma, comia como uma lesma, até o dia que ela ouve a seguinte pergunta: o que tem de tão fabuloso em sua vida?<br /><br />O livro é uma fábula poética para ler e reler devagar, a divagar, bem no estilo da Lesma Edições.</p>
                 </div>
             </section>
 
             <section id="sobre-lesma" class="content">
                 <div id="bloco-txt-sobre-lesma">
-                    <p>O "lesma" da Lesma Edições é este: “Onde se publica devagar, a vagar”.<br />Por enquanto temos em nosso catálogo apenas dois livros. Portanto não precisa catá-los logo.<br />Olhe o logo e o site da Lesma, que ainda tem poucas notícias. Portanto não precisa olhar com <br />toda rapidez do mundo. Vá com calma. Se não, de tão rápida a sua leitura, você vai achar que <br />a gente não tem nada para oferecer ao mundo. Nunca é demais avisar: vá devagar, a vagar, <br />pois uma boa leitura, às vezes, pode ser assim. Divagando com alguns pensamentos pelo livro <br />e o mundo.<br />Não, você não precisa ser devagar como a gente, nem queremos que todo mundo seja lento. <br />Não estamos formando um clube onde todos têm que pensar igual ou no mesmo ritmo. Mas <br />parar um pouco, ler um livro e apreciar o mundo sempre é um bom convite.<br />E é esse o convite que fazemos. Veja nosso trabalho e, se quiser ler algo que publicamos, <br />sinta-se à vontade para abrir nossos livros.<br />Nossa mascote é assim: uma lesma que caminha à vontade pelo mundo e deixa suas marcas em cada nova viagem que faz.<br />Estamos começando, descobrindo quem somos. A ideia de fazer a editora é nova. Portanto, <br />ainda não temos um texto definitivo de apresentação do nosso trabalho.<br />Simples fazer? Não, não é nada simples encontrar o simples, mas estamos tentando. Que seja um bom começo.<br /><br /><b>Equipe Lesma</b></p>
+                    <h2>Lesma Edições</h2>
+                    <p>In Portuguese, "lesma" means "snail" and "lema" translates as "slogan". Therefore, the “slowgan” of Lesma Edições is: We publish slowly, slowly roaming.<br /><br />To date, there are only two books listed in our catalogue. That is why there's no need for you to enlist with us, log in or categorize them.<br /><br />Take your time to look at the logo and the website of Lesma Edições, which still features few news entries. There is no hurry, therefore, to scan it as quickly as you can. Slow down. If you don't, if you're too fast, you might come to think that we don't have anything to offer. We can only remind you again and again: take your time, go slowly. A good read can sometimes be like that. Wondering about a few thoughts, wandering about the book, your mind, the world. <br /><br /><br />No, you don't have to be slow with us, we don't want everybody to be slow. We're not starting a club in which all members have to think equally and walk at the same pace. But it is always an invitation worth considering to stop for a while, read a book and enjoy the world around you. <br /><br />And this is what we would like to invite you to do. Take a look at our work and, if you become interested in reading some of our publications, feel free to open our books. Our mascot is like that, too: a snail which roams freely and slowly about the world, leaving its marks everywhere it passes on its journey. <br /><br />We are only starting out, discovering who we are. The idea of becoming an editor is a new one. Therefore, we still don't have a definite way of presenting our work. <br /><br />Easy to do? No, it is never easy to find the simple things, but we keep trying. May it be a good start.<br /><br /><b>The team of Lesma Edições</b></p>
                 </div>
             </section>
 
@@ -75,11 +89,12 @@
                 </figure>
 
                 <div id="bloco-txt-selma">
-                    <p>Nascida em São Paulo (Brasil), em 1965. Ela é uma mistura de escritora, artista plástica e pesquisadora da infância. Brasileira, viaja pelo sertão, aldeias e cidades à procura de palavras e brinquedos encontrados nas gavetas da imaginação.</p>
-                    <h2>Exposições</h2>
-                    <p>Meninos Quietos - um olhar para os brinquedos do sertão; Mundo Livro; As palavras e o Mundo;<br />Trilhas do Brincar;<br />Infâncias;<br />Lá e Cá: os livros viajantes Portugal;<br />Brasil 12 X 12 Alemanha</p>
+                    <h2>Selma Maria</h2>
+                    <p>Born in São Paulo (Brazil) in 1965, she is a multi-artist, working as an writer, visual artist and researching childhood. She travels through the interior of her native country, Brazil, visiting villages and towns in search of words and toys that may be found in the drawers of imagination.</p>
+                    <h2>She featured in the following exhibitions:</h2>
+                    <p>Meninos Quietos (Quiet children) - a look on the toys of the Brazilian interior;<br />Mundo Livro (Book world), As palavras e o mundo (Words and the world);<br />Trilhas do Brincar (The tracks of playing);<br />Infâncias (Childhoods);<br />Lá e Cá: os livros viajantes (Here and there: travelling books);<br />Brasil 12 x 12 Alemanha (Brazil 12 x 12 Germany)</p>
                     <h2>Livros</h2>
-                    <p>Um pequeno tratado de brinquedos para meninos quietos;<br />Um pequeno tratado de brinquedos para meninos quietos da cidade;<br />Isso Isso;<br />O último livro de papel — Editora Peirópolis. Superímã e o mar; A menina que nunca terminava nada — Sesi-SP Editora Ora Bolas! — Editora Tordesilhinhas Abc da água — Guia dos Curiosos Comunicações
+                    <p>Um pequeno tratado de brinquedos para meninos quietos (A small treaty of toys for quiet children);<br />Um pequeno tratado de brinquedos para meninos quietos da cidade (A small treaty of toys for quiet children of the city);<br />Isso Isso (This this);<br />O último livro de papel (The last paper book) — Peirópolis publishers<br />Superímã e o mar (Super magnet and the sea); A menina que nunca terminava nada (The girl who never finished anything) — published by Sesi-SP publishers Ora Bolas! — Tordesilhinhas publishers ABC da água (Water ABC) — Guia dos Curiosos Communications
                     </p>
                 </div>
             </section>
@@ -89,11 +104,10 @@
                     <img src="@Url.Content("~/Content/images/image-bio-nina.jpg")" title="Nina Anderson" />
                 </figure>
                 <div id="bloco-txt-nina">
-                    <p>Nina publica ilustrações em livros infantojuvenis desde os 18 anos.</p>
-                    <p>Agora, com 21, possui sete publicações. Elas são:</p>
-                    <p>Um Pequeno Tratado de Brinquedos para Meninos Quietos da Cidade<br />Alice<br />Superímã e o Mar<br />A Menina que Nunca Terminava Nada<br />Ora Bolas!<br />ABC da Água<br />Nascida em São Paulo, Brasil, em 1992.<br />Estudante do Instituto de Artes da UNESP.</p>
-                    <p>Viajou pelo Brasil desde criança acompanhando sua mãe, Selma Maria, em suas pesquisas sobre a infância no Sertão Brasileiro e pela Europa desde os 17, com suas próprias pernas, observando a arte e cultura ao redor e desenhando sempre de um jeito diferente do que estava acostumada.</p>
-                    <p>www.cargocollective.com/ninaanderson</p>
+                    <h2>Nina Anderson</h2>
+                    <p>Nina publishes illustrations of books since she was 18.<br /><br />By now, at the age of 21, she has seven publications. They are:</p>
+                    <h2>Livros</h2>
+                    <p>A Treaty on Toys for Quiet Children from the City<br />Alice<br />Supermagnet and the Sea<br />The Girl that Never Finished Anything<br />Uh-0h!<br />Eight Eating Cookies, Ten eating pastry<br />ABC of Water<br />Was born in São Paulo, Brazil, in 1992 and studied in the Art Institute of São Paulo State’s University.<br /><br />She has traveled Brazil since she was a child and throughout Europe since she was 17 observing all the art and culture around and drawing always in a different way.<br /><br /><b><a href="#">www.cargocollective.com/ninaanderson</a></b></p>
                 </div>
             </section>
 
@@ -103,13 +117,13 @@
 
                 <div id="bloco-txt-contato">
                     <h2>Entre em Contato</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada nulla vel nisl condimentum ullamcorper. Nulla facilisi.</p>
+                    <p>Please contact us to answer questions, give us suggestions or criticisms, order our products.</p>
                 </div>
                 <div id="box-form">
-                    <input type="text" name="nome" />
-                    <input type="email" name="email" />
+                    <input type="text" name="nome" placeholder="Name"/>
+                    <input type="email" name="email" placeholder="E-mail"/>
                     <textarea></textarea>
-                    <input type="submit" value="Enviar" />
+                    <input type="submit" value="Send" />
                 </div>
 
             </section>

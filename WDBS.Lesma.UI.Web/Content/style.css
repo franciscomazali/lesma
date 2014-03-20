@@ -63,7 +63,7 @@ header {
     /*position: relative;*/
     float: left;
     position: fixed;
-    background: #ffcc00;
+    /*background: #ffcc00;*/
 }
 
     header figure {
@@ -157,7 +157,7 @@ header {
 .content {
     height: auto;
     float: left;
-    font-size:1.8em;
+    font-size:1.6em;
     /*margin: 20px 0;*/
 
     /*width:960px;
@@ -171,6 +171,10 @@ header {
 }
 
 #lesma-mesma {
+    /*background: #ff0000;*/
+}
+
+#lesma-mesma-segunda {
     /*background: #ff0000;*/
 }
 
@@ -252,7 +256,60 @@ header {
 #bloco-txt-lesma-mesma h2{
     float:left;
     margin: 0 0 10px 0;
-    background:#ff006e;
+    /*background:#ff006e;*/
+}
+
+#box-livro-lesma-mesma-segunda{
+    width:280px;
+    padding: 0 20px 0 0;
+    float:left;
+    border-right:1px solid #cccccc;
+    /*background:#4cff00;*/
+}
+
+#box-livro-lesma-mesma-segunda h2{
+    float:left;
+    margin: 0 0 10px 0;
+    /*background:#ff006e;*/
+}
+
+#box-livro-lesma-mesma-segunda figure{
+    width:280px;
+    height:210px;
+    margin: 0 0 10px 0;
+    border:1px solid #666666;
+    float:left;
+}
+
+#box-livro-lesma-mesma-segunda input[type=email]{
+    width:280px;
+    margin: 0 0 10px 0;
+    padding:10px 0;
+    float:left;
+}
+
+#box-livro-lesma-mesma-segunda button{
+    float: left;
+    border:none;
+    padding:10px 30px;
+    color:#ffffff;
+    cursor:pointer;
+    text-transform:uppercase;
+    font-size:1em;
+    background: #000000;
+}
+
+#bloco-txt-lesma-mesma-segunda {
+    width:600px;
+    float:left;
+    margin: 0 0 0 20px;
+    /*background:#4cff00;*/
+}
+
+#bloco-txt-lesma-mesma-segunda h2{
+    float:left;
+    margin: 0 0 10px 0;
+    /*background:#ff006e;*/
 }
 
 #bloco-txt-sobre-lesma {
@@ -275,6 +332,7 @@ header {
 }
 
 #bloco-txt-selma h2{
+    width:100%;
     float:left;
     margin: 20px 0;
     /*background:#ff006e;*/
