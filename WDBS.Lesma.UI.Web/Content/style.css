@@ -215,6 +215,11 @@ header {
     /*background:#4cff00;*/
 }
 
+    #box-livro-lesma-mesma p {
+        margin-top:5px;
+        color: #a14627;
+    }
+
 #box-livro-lesma-mesma h2{
     float:left;
     margin: 0 0 10px 0;
@@ -396,6 +401,10 @@ header {
     margin: 0 0 0 50px;
     /*background: #09F;*/
 }
+
+    #box-form p {
+        color: #a14627;
+    }
 
 #box-form input[type=text] {
     width: 520px;

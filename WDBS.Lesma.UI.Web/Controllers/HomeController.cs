@@ -18,7 +18,7 @@ namespace WDBS.Lesma.UI.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult EnviaEmail(string email, string nome, string mensagem)
+        public JsonResult EnviaEmail(string email, string nome, string mensagem)
         {
             //Response.Cache.SetCacheability(HttpCacheability.NoCache);
             //Response.Cache.SetAllowResponseInBrowserHistory(false);
@@ -27,15 +27,15 @@ namespace WDBS.Lesma.UI.Web.Controllers
             //string nome = form["nome"];
             //string mensagem = form["mensagem"];
 
-
+            string msg = "";
 
             if (Helper.Email.EnviaEmail(nome, "Contato do site", MontaMensagemEmail(nome, email, mensagem), "franciscomazali@gmail.com"))
-                TempData.Add("Sucesso", "Mensagem enviada com sucesso.");
+                msg = "Mensagem enviada com sucesso.";
 
             else
-                TempData.Add("Erro", "Ops. Ocorreu um erro em nosso servidor. Por favor, tente outra vez mais tarde.");
+                msg = "Ops. Ocorreu um erro em nosso servidor. Por favor, tente outra vez mais tarde.";
 
-            return View();
+            return Json(new { msg }, JsonRequestBehavior.AllowGet);
         }
 
 
@@ -62,15 +62,15 @@ namespace WDBS.Lesma.UI.Web.Controllers
             //Response.Cache.SetAllowResponseInBrowserHistory(false);
 
             //string email = form["encomenda"];
-
+            string msg = "";
 
             if (Helper.Email.EnviaEmail(encomenda, "Você tem uma nova encomenda!", MontaMensagemEncomenda(encomenda), "franciscomazali@gmail.com"))
-                TempData.Add("Sucesso", "Encomenda realizada com sucesso.");
+                msg = "Encomenda realizada com sucesso.";
 
             else
-                TempData.Add("Erro", "Ops. Ocorreu um erro em nosso servidor. Por favor, tente outra vez mais tarde.");
+                msg = "Ops. Ocorreu um erro em nosso servidor. Por favor, tente outra vez mais tarde.";
 
-            return Json(true);
+            return Json(new { msg }, JsonRequestBehavior.AllowGet);
         }
 
 

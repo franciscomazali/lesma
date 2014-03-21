@@ -31,13 +31,19 @@
                 $.ajax({
                     url: "Home/EnviaEmail",
                     type: "POST",
-                    data: { email: email, nome: nome, mensagem: mensagem },
-                    dataType: "html",
-                    success: function (data) {
-                        alert("envio");
+                    data: "{\"email\":\"" + email + "\", \"nome\":\"" + nome + "\", \"mensagem\":\"" + mensagem + "\"}",
+                    contentType: "application/json; charset=utf-8",
+                    //data: { email: email, nome: nome, mensagem: mensagem },
+                    dataType: "json",
+                    success: function (data, textStatus, XMLHttpRequest) {
+                        $('#box-form').append("<p>" + data.msg + "</p>");
+                        setTimeout(function () {
+                            $('#box-form > p').fadeOut();
+                        }, 7000);
+
                     },
-                    error: function (jqXHR) {
-                        alert(jqXHR);
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest);
                     }
                 });
 
@@ -47,16 +53,23 @@
 
                 var encomenda = $('#encomenda').val();
 
+
+
                 $.ajax({
                     url: "Home/EnviaEmailEcomenda",
                     type: "POST",
-                    data: { encomenda: encomenda },
-                    dataType: "html",
-                    success: function (data) {
-                        alert("envio");
+                    data: "{\"encomenda\":\"" + encomenda + "\"}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data, textStatus, XMLHttpRequest) {
+                        $('#box-livro-lesma-mesma').append("<p>" + data.msg + "</p>");
+                        setTimeout(function () {
+                            $('#box-livro-lesma-mesma > p').fadeOut();
+                        }, 7000);
+
                     },
-                    error: function (jqXHR) {
-                        alert(jqXHR);
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest);
                     }
                 });
 
@@ -106,8 +119,8 @@
                     <figure>
                         <img src="@Url.Content("~/Content/images/image-livro.jpg")" title="Lesma Mesma" />
                     </figure>
-                    <input type="email" name="email-encomenda" placeholder="Seu E-mail"/>
-                    <button>Encomendar</button>
+                    <input type="email" name="encomenda" id="encomenda" placeholder="Seu E-mail"/>
+                    <button id="encomendar">Encomendar</button>
                 </div>
                 <div id="bloco-txt-lesma-mesma">
                     <h2>Lesma Mesma</h2>
