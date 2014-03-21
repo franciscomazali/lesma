@@ -23,6 +23,45 @@
                 }, 2000);
             });
 
+            $('#contatar').on('click', function () {
+                var email = $('#email').val();
+                var nome = $('#nome').val();
+                var mensagem = $('#mensagem').val();
+
+                $.ajax({
+                    url: "Home/EnviaEmail",
+                    type: "POST",
+                    data: { email: email, nome: nome, mensagem: mensagem },
+                    dataType: "html",
+                    success: function (data) {
+                        alert("envio");
+                    },
+                    error: function (jqXHR) {
+                        alert(jqXHR);
+                    }
+                });
+
+            });
+
+            $('#encomendar').on('click', function () {
+
+                var encomenda = $('#encomenda').val();
+
+                $.ajax({
+                    url: "Home/EnviaEmailEcomenda",
+                    type: "POST",
+                    data: { encomenda: encomenda },
+                    dataType: "html",
+                    success: function (data) {
+                        alert("envio");
+                    },
+                    error: function (jqXHR) {
+                        alert(jqXHR);
+                    }
+                });
+
+            });
+
         });
     </script>
 
@@ -120,10 +159,10 @@
                     <p>Entre em contato conosco, para esclarecer dúvidas, nos dar sugestões ou críticas, solicitar nossos produtos.</p>
                 </div>
                 <div id="box-form">
-                    <input type="text" name="nome" placeholder="Nome"/>
-                    <input type="email" name="email" placeholder="E-mail"/>
-                    <textarea></textarea>
-                    <input type="submit" value="Enviar" />
+                    <input type="text" name="nome" id="nome" placeholder="Nome"/>
+                    <input type="email" name="email" id="email" placeholder="E-mail"/>
+                    <textarea placeholder="Mensagem" name="mensagem" id="mensagem"></textarea>
+                    <input type="button" id="contatar" value="Enviar" />
                 </div>
 
             </section>

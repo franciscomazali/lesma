@@ -42,6 +42,7 @@ p {
 
 input, textarea {
     border:1px solid #cccccc;
+    font-family: 'gillsans_lightregular';
 }
 
 a:link, visited, hover, active {
@@ -229,9 +230,9 @@ header {
 }
 
 #box-livro-lesma-mesma input[type=email]{
-    width:280px;
+    width:260px;
     margin: 0 0 10px 0;
-    padding:10px 0;
+    padding:10px;
     float:left;
 }
 
@@ -282,9 +283,9 @@ header {
 }
 
 #box-livro-lesma-mesma-segunda input[type=email]{
-    width:280px;
+    width:260px;
     margin: 0 0 10px 0;
-    padding:10px 0;
+    padding:10px;
     float:left;
 }
 
@@ -397,39 +398,40 @@ header {
 }
 
 #box-form input[type=text] {
-    width: 540px;
+    width: 520px;
     float: left;
     margin:10px 0;
-    padding:10px 0;
+    padding:10px;
     background: #ffffff;
 }
 
 #box-form input[type=email] {
-    width: 540px;
+    width: 520px;
     float: left;
     margin:10px 0;
-    padding:10px 0;
+    padding:10px;
     background: #ffffff;
 }
+
 
 #box-form input:first-child {
     margin: 0 0 10px 0;
 }
 
 textarea {
-    width: 540px;
-    max-width: 540px;
-    min-width: 540px;
+    width: 520px;
+    max-width: 520px;
+    min-width: 520px;
     height: 120px;
     max-height: 120px;
     min-height: 120px;
     float: left;
     margin:10px 0;
-    padding:10px 0;
+    padding:10px;
     background: #ffffff;
 }
 
-input[type=submit] {
+input[type=button] {
     float: right;
     padding:10px 30px;
     color:#ffffff;
