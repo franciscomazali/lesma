@@ -178,6 +178,7 @@
     <Content Include="Content\ufonts.com_gillsans_light-webfont.woff" />
     <Content Include="Areas\En\Views\Web.config" />
     <Content Include="Areas\En\Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
