@@ -23,6 +23,59 @@
                 }, 2000);
             });
 
+            $('#contatar').on('click', function () {
+                var email = $('#email').val();
+                var nome = $('#nome').val();
+                var mensagem = $('#mensagem').val();
+
+                $.ajax({
+                    url: "En/Home/EnviaEmail",
+                    type: "POST",
+                    data: "{\"email\":\"" + email + "\", \"nome\":\"" + nome + "\", \"mensagem\":\"" + mensagem + "\"}",
+                    contentType: "application/json; charset=utf-8",
+                    //data: { email: email, nome: nome, mensagem: mensagem },
+                    dataType: "json",
+                    success: function (data, textStatus, XMLHttpRequest) {
+                        $('#box-form').append("<p>" + data.msg + "</p>");
+                        setTimeout(function () {
+                            $('#box-form > p').fadeOut();
+                        }, 7000);
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest);
+                    }
+                });
+
+            });
+
+            $('#encomendar').on('click', function () {
+
+                var encomenda = $('#encomenda').val();
+
+
+
+                $.ajax({
+                    url: "En/Home/EnviaEmailEcomenda",
+                    type: "POST",
+                    data: "{\"encomenda\":\"" + encomenda + "\"}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data, textStatus, XMLHttpRequest) {
+                        $('#box-livro-lesma-mesma').append("<p>" + data.msg + "</p>");
+                        setTimeout(function () {
+                            $('#box-livro-lesma-mesma > p').fadeOut();
+                        }, 7000);
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest);
+                    }
+                });
+
+            });
+
+
         });
     </script>
 
@@ -39,10 +92,10 @@
                 <li>
                     <img src="@Url.Content("~/Content/images/image-btn-facebook.png")" title="Facebook" /></li>
                 <li>
-                    <a href="#">
+                    <a href="Home">
                     <img src="@Url.Content("~/Content/images/image-bt-pt.png")" title="Português" /></a></li>
                 <li>
-                    <a href="#">
+                    <a href="/En">
                     <img src="@Url.Content("~/Content/images/image-bt-en.png")"  title="Inglês" /></a></li>
             </ul>
         </nav>
@@ -67,8 +120,8 @@
                     <figure>
                         <img src="@Url.Content("~/Content/images/image-livro.jpg")" title="Lesma Mesma" />
                     </figure>
-                    <input type="email" name="email-encomenda" placeholder="Seu E-mail"/>
-                    <button>Encomendar</button>
+                    <input type="email" name="encomenda" id="encomenda" placeholder="Your E-mail"/>
+                    <button id="encomendar">Order</button>
                 </div>
                 <div id="bloco-txt-lesma-mesma">
                     <h2>Lesma Mesma</h2>
@@ -120,10 +173,10 @@
                     <p>Please contact us to answer questions, give us suggestions or criticisms, order our products.</p>
                 </div>
                 <div id="box-form">
-                    <input type="text" name="nome" placeholder="Name"/>
-                    <input type="email" name="email" placeholder="E-mail"/>
-                    <textarea></textarea>
-                    <input type="submit" value="Send" />
+                    <input type="text" name="nome" id="nome" placeholder="Name"/>
+                    <input type="email" name="email" id="email" placeholder="E-mail"/>
+                    <textarea placeholder="Message" name="mensagem" id="mensagem"></textarea>
+                    <input type="button" id="contatar" value="Send" />
                 </div>
 
             </section>

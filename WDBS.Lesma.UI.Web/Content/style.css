@@ -12,6 +12,7 @@ html {
     -o-background-size: cover;
     background-size: cover;
     background: url(images/image-bg.jpg) top no-repeat fixed #fbfbfb;
+    overflow:hidden;
 }
 
 body {

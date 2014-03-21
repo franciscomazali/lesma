@@ -29,7 +29,7 @@ namespace WDBS.Lesma.UI.Web.Controllers
 
             string msg = "";
 
-            if (Helper.Email.EnviaEmail(nome, "Contato do site", MontaMensagemEmail(nome, email, mensagem), "franciscomazali@gmail.com"))
+            if (Helper.Email.EnviaEmail(nome, "Contato do site", MontaMensagemEmail(nome, email, mensagem), "lesma.selma@gmail.com"))
                 msg = "Mensagem enviada com sucesso.";
 
             else
@@ -64,7 +64,7 @@ namespace WDBS.Lesma.UI.Web.Controllers
             //string email = form["encomenda"];
             string msg = "";
 
-            if (Helper.Email.EnviaEmail(encomenda, "Você tem uma nova encomenda!", MontaMensagemEncomenda(encomenda), "franciscomazali@gmail.com"))
+            if (Helper.Email.EnviaEmail(encomenda, "Você tem uma nova encomenda!", MontaMensagemEncomenda(encomenda), "lesma.selma@gmail.com"))
                 msg = "Encomenda realizada com sucesso.";
 
             else
