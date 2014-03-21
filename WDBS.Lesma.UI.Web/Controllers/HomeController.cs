@@ -56,7 +56,7 @@ namespace WDBS.Lesma.UI.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult EnviaEmailEcomenda(string encomenda)
+        public JsonResult EnviaEmailEcomenda(string encomenda)
         {
             //Response.Cache.SetCacheability(HttpCacheability.NoCache);
             //Response.Cache.SetAllowResponseInBrowserHistory(false);
@@ -64,13 +64,13 @@ namespace WDBS.Lesma.UI.Web.Controllers
             //string email = form["encomenda"];
 
 
-            if (Helper.Email.EnviaEmail(encomenda, "Você tem uma nova encomenda!", MontaMensagemEncomenda(email), "franciscomazali@gmail.com"))
+            if (Helper.Email.EnviaEmail(encomenda, "Você tem uma nova encomenda!", MontaMensagemEncomenda(encomenda), "franciscomazali@gmail.com"))
                 TempData.Add("Sucesso", "Encomenda realizada com sucesso.");
 
             else
                 TempData.Add("Erro", "Ops. Ocorreu um erro em nosso servidor. Por favor, tente outra vez mais tarde.");
 
-            return View();
+            return Json(true);
         }
 
 
