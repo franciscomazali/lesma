@@ -12,11 +12,11 @@ namespace WDBS.Lesma.UI.Web.Helper
         {
             //Define os dados do e-mail
             string nomeRemetente = "Contato Lesma";
-            string emailRemetente = "lesma@wdbs.com.br";
-            string senha = "selma01";
+            string emailRemetente = "no-reply@lesmaedicoes.com.br";
+            string senha = "Gesualda29";
 
             //Host da porta SMTP
-            string SMTP = "smtp.wdbs.com.br";
+            string SMTP = "smtp.lesmaedicoes.com.br";
 
             string emailDestinatario = destinatario;
 
@@ -24,7 +24,7 @@ namespace WDBS.Lesma.UI.Web.Helper
             MailMessage objEmail = new MailMessage();
 
             //Define o Campo From e ReplyTo do e-mail.
-            objEmail.From = new System.Net.Mail.MailAddress(emailRemetente, nome + " <" + emailRemetente + ">");
+            objEmail.From = new System.Net.Mail.MailAddress(emailRemetente, "Lesma Edições" + " <" + emailRemetente + ">");
 
             //Define os destinatários do e-mail.
             objEmail.To.Add(emailDestinatario);

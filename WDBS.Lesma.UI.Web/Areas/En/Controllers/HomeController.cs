@@ -64,7 +64,7 @@ namespace WDBS.Lesma.UI.Web.Areas.En.Controllers
             //string email = form["encomenda"];
             string msg = "";
 
-            if (Helper.Email.EnviaEmail(encomenda, "Você tem uma nova encomenda!", MontaMensagemEncomenda(encomenda)))
+            if (Helper.Email.EnviaEmail(encomenda, "Você tem uma nova encomenda!", MontaMensagemEncomenda(encomenda), "franciscomazali@gmail.com"))
                 msg = "Order was successful.";
 
             else
