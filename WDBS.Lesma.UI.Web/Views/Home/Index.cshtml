@@ -6,6 +6,7 @@
     <title>Lesma Edições</title>
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/style.css")" />
     <script type="text/javascript" src="@Url.Content("~/scripts/jquery-2.1.0.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/functions.js")"></script>
 
     <script>
         $(document).ready(function () {
@@ -53,26 +54,32 @@
 
                 var encomenda = $('#encomenda').val();
 
+                if (encomenda != "" && verificaEmail(encomenda)) {
 
+                    $.ajax({
+                        url: "Home/EnviaEmailEcomenda",
+                        type: "POST",
+                        data: "{\"encomenda\":\"" + encomenda + "\"}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (data, textStatus, XMLHttpRequest) {
+                            $('#box-livro-lesma-mesma').append("<p>" + data.msg + "</p>");
+                            setTimeout(function () {
+                                $('#box-livro-lesma-mesma > p').fadeOut();
+                            }, 7000);
 
-                $.ajax({
-                    url: "Home/EnviaEmailEcomenda",
-                    type: "POST",
-                    data: "{\"encomenda\":\"" + encomenda + "\"}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (data, textStatus, XMLHttpRequest) {
-                        $('#box-livro-lesma-mesma').append("<p>" + data.msg + "</p>");
-                        setTimeout(function () {
-                            $('#box-livro-lesma-mesma > p').fadeOut();
-                        }, 7000);
-
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert(XMLHttpRequest);
-                    }
-                });
-
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(XMLHttpRequest);
+                        }
+                    });
+                }
+                else {
+                    $('#box-livro-lesma-mesma').append("<p>Insira um e-mail válido.</p>");
+                    setTimeout(function () {
+                        $('#box-livro-lesma-mesma > p').fadeOut();
+                    }, 7000);
+                }
             });
 
         });
